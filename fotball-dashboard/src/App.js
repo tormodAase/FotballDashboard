@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Container><Table array={testArray}/></Container>
+      <Container title="Tabell"><Table array={testArray}/></Container>
     </div>
   );
 }
