@@ -1,3 +1,17 @@
 .Container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContainerHeader {
+    background-color: cyan;
     border: 1px solid black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.ContainerBody {
+    background-color: seashell;
+    border: 1px solid black;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
