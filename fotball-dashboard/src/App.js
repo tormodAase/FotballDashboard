@@ -4,7 +4,7 @@ import Container from './ContainerComponent';
 function App() {
   return (
     <div className="App">
-      <Container><Table/></Container>
+      <Container title="Tabell"><Table/></Container>
     </div>
   );
 }
