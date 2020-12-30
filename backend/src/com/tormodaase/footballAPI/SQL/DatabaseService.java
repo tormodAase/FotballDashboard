@@ -1,2 +1,4 @@
-package com.tormodaase.footballAPI.SQL;public class DatabaseService {
+package com.tormodaase.footballAPI.SQL;
+
+public class DatabaseService {
 }
