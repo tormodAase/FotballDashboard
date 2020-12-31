@@ -1,4 +1,4 @@
-package com.tormodaase.footballAPI.objects.exceptions;
+package com.tormodaase.fotballbackend.footballAPI.objects.exceptions;
 
 public class JSONMismatchException extends Exception {
     public JSONMismatchException(String errorMessage) {

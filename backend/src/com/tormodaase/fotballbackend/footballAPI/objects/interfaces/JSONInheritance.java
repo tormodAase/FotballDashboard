@@ -1,6 +1,6 @@
-package com.tormodaase.footballAPI.objects.interfaces;
+package com.tormodaase.fotballbackend.footballAPI.objects.interfaces;
 
-import com.tormodaase.footballAPI.objects.exceptions.JSONMismatchException;
+import com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
 import org.json.JSONObject;
 
 public interface JSONInheritance {

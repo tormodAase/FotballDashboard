@@ -1,7 +1,7 @@
-package com.tormodaase.footballAPI.objects.interfaces;
+package com.tormodaase.fotballbackend.footballAPI.objects.interfaces;
 
-import com.tormodaase.footballAPI.objects.Country;
-import com.tormodaase.footballAPI.objects.Season;
+import com.tormodaase.fotballbackend.footballAPI.objects.Country;
+import com.tormodaase.fotballbackend.footballAPI.objects.Season;
 
 public interface ILeague extends JSONInheritance {
     public int getID();

@@ -1,7 +1,7 @@
-package com.tormodaase.footballAPI.objects;
+package com.tormodaase.fotballbackend.footballAPI.objects;
 
-import com.tormodaase.footballAPI.objects.exceptions.JSONMismatchException;
-import com.tormodaase.footballAPI.objects.interfaces.ICoverage;
+import com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
+import com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ICoverage;
 import org.json.JSONObject;
 
 public class Coverage implements ICoverage {

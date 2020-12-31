@@ -1,4 +1,4 @@
-package com.tormodaase.footballAPI.objects.interfaces;
+package com.tormodaase.fotballbackend.footballAPI.objects.interfaces;
 
 public interface ICoverage extends JSONInheritance {
     public boolean getEvents();
