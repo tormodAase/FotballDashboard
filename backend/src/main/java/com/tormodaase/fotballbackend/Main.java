@@ -4,6 +4,8 @@ import main.java.com.tormodaase.fotballbackend.environment.exceptions.Environmen
 import main.java.com.tormodaase.fotballbackend.footballAPI.FootballAPI;
 import main.java.com.tormodaase.fotballbackend.footballAPI.SQL.DatabaseService;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.Country;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.League;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.Team;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
 import org.json.JSONObject;
 
@@ -14,14 +16,32 @@ public class Main {
 
     public static void main(String[] args) throws JSONMismatchException, SQLException, EnvironmentVariableException, IOException {
 		FootballAPI.getAPIKey();
-		Country[] countries = FootballAPI.getCountries();
 
 	    DatabaseService.connect();
+	    /*
+	    Country[] countries = FootballAPI.getCountries();
 	    for (int i=0; i<countries.length; i++) {
 	    	System.out.println("Saving countries to database: "+i+"/"+countries.length);
 	    	Country country = countries[i];
 			DatabaseService.upsertCountry(country);
+		}*/
+
+		Team[] teams = FootballAPI.getTeams("country=Norway");
+		for (int i=0; i<teams.length; i++) {
+			System.out.println("Saving teams to database: "+i+"/"+teams.length);
+			Team team = teams[i];
+			DatabaseService.upsertTeam(team);
 		}
+
+		/*
+		League[] leagues = FootballAPI.getLeagues();
+	    for (int i=0; i<leagues.length; i++) {
+			System.out.println("Saving leagues to database: "+i+"/"+leagues.length);
+			League league = leagues[i];
+			DatabaseService.upsertLeague(league);
+		}
+
+		 */
 	    DatabaseService.disconnect();
 
     }

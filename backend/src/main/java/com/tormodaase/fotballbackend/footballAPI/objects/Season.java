@@ -13,12 +13,17 @@ public class Season implements ISeason {
 
     public Season(JSONObject json) throws JSONMismatchException {
         validateJSON(json);
-        this.year = json.getInt("year");
-        this.start = json.getString("start");
-        this.end = json.getString("end");
-        this.current = json.getBoolean("current");
-        this.coverage = new Coverage(json.getJSONObject("coverage"));
-        this.json = json;
+        try {
+            this.year = json.getInt("year");
+            this.start = json.isNull("start") ? null : json.getString("start");
+            this.end = json.isNull("end") ? null : json.getString("end");
+            this.current = json.getBoolean("current");
+            this.coverage = new Coverage(json.getJSONObject("coverage"));
+            this.json = json;
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.err.println(json);
+        }
     }
 
 

@@ -8,7 +8,7 @@ public class Team implements ITeam {
     private int id;
     private String name;
     private String country;
-    private int founded;
+    private Integer founded;
     private boolean national;
     private String logo;
     private Venue venue;
@@ -16,7 +16,14 @@ public class Team implements ITeam {
 
     public Team(JSONObject json) throws JSONMismatchException {
         validateJSON(json);
-        //TODO
+        this.id         = json.getJSONObject("team").getInt("id");
+        this.name       = json.getJSONObject("team").getString("name");
+        this.country    = json.getJSONObject("team").getString("country");
+        this.founded    = json.getJSONObject("team").isNull("founded") ? -1 : json.getJSONObject("team").getInt("founded");
+        this.national   = json.getJSONObject("team").getBoolean("national");
+        this.logo       = json.getJSONObject("team").getString("logo");
+        this.venue      = new Venue(json.getJSONObject("venue"));
+        this.json       = json;
     }
 
     @Override

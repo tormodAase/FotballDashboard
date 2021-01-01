@@ -9,13 +9,21 @@ public class Venue implements IVenue {
     private String name;
     private String address;
     private String city;
-    private int capacity;
+    private Integer capacity;
     private String surface;
     private String image;
     private JSONObject json;
 
-    public Venue(JSONObject json) {
-        //TODO
+    public Venue(JSONObject json) throws JSONMismatchException {
+        validateJSON(json);
+        this.id =       json.isNull("id") ? -1 : json.getInt("id");
+        this.name =     json.isNull("name") ? null : json.getString("name");
+        this.address =  json.isNull("address") ? null : json.getString("address");
+        this.city =     json.isNull("city") ? null : json.getString("city");
+        this.capacity = json.isNull("capacity") ? -1 : json.getInt("capacity");
+        this.surface =  json.isNull("surface") ? null : json.getString("surface");
+        this.image =    json.isNull("image") ? null : json.getString("image");
+        this.json =     json;
     }
 
     @Override

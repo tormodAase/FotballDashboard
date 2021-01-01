@@ -2,6 +2,8 @@ package main.java.com.tormodaase.fotballbackend.footballAPI;
 
 import main.java.com.tormodaase.fotballbackend.environment.exceptions.EnvironmentVariableException;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.Country;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.League;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.Team;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -27,6 +29,27 @@ public class FootballAPI {
         APIKEY = apiKey;
     }
 
+    public static Team[] getTeams(String params) throws IOException, JSONMismatchException {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://v3.football.api-sports.io/teams?"+params)
+                .method("GET", null)
+                .addHeader("x-rapidapi-host", "v3.football.api-sports.io")
+                .addHeader("x-rapidapi-key", APIKEY)
+                .build();
+        Response response = client.newCall(request).execute();
+
+        JSONObject responseBody = new JSONObject(response.body().string());
+        JSONArray jsonArray = responseBody.getJSONArray("response");
+        Team[] teams = new Team[jsonArray.length()];
+        for (int i=0; i<jsonArray.length(); i++) {
+            JSONObject json = jsonArray.getJSONObject(i);
+            teams[i] = new Team(json);
+        }
+        return teams;
+    }
+
     public static Country[] getCountries() throws IOException, JSONMismatchException {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -50,5 +73,27 @@ public class FootballAPI {
         }
 
         return countries;
+    }
+
+    public static League[] getLeagues() throws IOException, JSONMismatchException {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request request = new Request.Builder()
+                .url("https://v3.football.api-sports.io/leagues")
+                .method("GET", null)
+                .addHeader("x-rapidapi-host", "v3.football.api-sports.io")
+                .addHeader("x-rapidapi-key", APIKEY)
+                .build();
+        Response response = client.newCall(request).execute();
+        JSONObject responseBody = new JSONObject(response.body().string());
+        JSONArray jsonArray = responseBody.getJSONArray("response");
+
+        League[] leagues = new League[jsonArray.length()];
+        for (int i=0; i<leagues.length; i++) {
+            JSONObject json = jsonArray.getJSONObject(i);
+            leagues[i] = new League(json);
+        }
+
+        return leagues;
     }
 }

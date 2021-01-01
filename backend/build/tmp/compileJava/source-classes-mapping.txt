@@ -1,21 +1,21 @@
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/Venue.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.Venue
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/Team.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.Team
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ILeague.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ILeague
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/Season.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.Season
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/exceptions/JSONMismatchException.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ICoverage.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ICoverage
 main/java/com/tormodaase/fotballbackend/environment/exceptions/EnvironmentVariableException.java
  main.java.com.tormodaase.fotballbackend.environment.exceptions.EnvironmentVariableException
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/Country.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.Country
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ISeason.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ISeason
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/IVenue.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.IVenue
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/JSONInheritance.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.JSONInheritance
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/Season.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.Season
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ICoverage.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ICoverage
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ICountry.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ICountry
 main/java/com/tormodaase/fotballbackend/environment/SetEnvironmentVariables.java
@@ -23,17 +23,17 @@ main/java/com/tormodaase/fotballbackend/environment/SetEnvironmentVariables.java
  main.java.com.tormodaase.fotballbackend.environment.SetEnvironmentVariables$Environment
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/Coverage.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.Coverage
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ITeam.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ITeam
 main/java/com/tormodaase/fotballbackend/footballAPI/objects/League.java
  main.java.com.tormodaase.fotballbackend.footballAPI.objects.League
-main/java/com/tormodaase/fotballbackend/footballAPI/SQL/DatabaseService.java
- main.java.com.tormodaase.fotballbackend.footballAPI.SQL.DatabaseService
 main/java/com/tormodaase/fotballbackend/footballAPI/FootballAPI.java
  main.java.com.tormodaase.fotballbackend.footballAPI.FootballAPI
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/Country.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.Country
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/Team.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.Team
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ITeam.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ITeam
+main/java/com/tormodaase/fotballbackend/footballAPI/SQL/DatabaseService.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.SQL.DatabaseService
+main/java/com/tormodaase/fotballbackend/footballAPI/objects/Venue.java
+ main.java.com.tormodaase.fotballbackend.footballAPI.objects.Venue
 main/java/com/tormodaase/fotballbackend/Main.java
  main.java.com.tormodaase.fotballbackend.Main
-main/java/com/tormodaase/fotballbackend/footballAPI/objects/interfaces/ILeague.java
- main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ILeague

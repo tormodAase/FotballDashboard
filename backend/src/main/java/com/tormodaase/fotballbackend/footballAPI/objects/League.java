@@ -15,15 +15,16 @@ public class League implements ILeague {
 
     public League(JSONObject json) throws JSONMismatchException {
         validateJSON(json);
-        this.id = json.getInt("id");
-        this.name = json.getString("name");
-        this.type = json.getString("type");
-        this.logo = json.getString("logo");
+        this.id = json.getJSONObject("league").getInt("id");
+        this.name = json.getJSONObject("league").getString("name");
+        this.type = json.getJSONObject("league").getString("type");
+        this.logo = json.getJSONObject("league").getString("logo");
         this.country = new Country (json.getJSONObject("country"));
         this.seasons = new Season[json.getJSONArray("seasons").length()];
         for (int i=0; i<seasons.length; i++) {
             seasons[i] = new Season(json.getJSONArray("seasons").getJSONObject(i));
         }
+
         this.json = json;
     }
 
