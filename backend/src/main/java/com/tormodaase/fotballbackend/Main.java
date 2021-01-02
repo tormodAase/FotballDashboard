@@ -8,14 +8,18 @@ import main.java.com.tormodaase.fotballbackend.footballAPI.objects.League;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.Team;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
 import org.json.JSONObject;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) throws JSONMismatchException, SQLException, EnvironmentVariableException, IOException {
 		FootballAPI.getAPIKey();
+		SpringApplication.run(Main.class, args);
 
 	    DatabaseService.connect();
 	    /*
@@ -26,12 +30,14 @@ public class Main {
 			DatabaseService.upsertCountry(country);
 		}*/
 
+		/*
 		Team[] teams = FootballAPI.getTeams("country=Norway");
 		for (int i=0; i<teams.length; i++) {
 			System.out.println("Saving teams to database: "+i+"/"+teams.length);
 			Team team = teams[i];
 			DatabaseService.upsertTeam(team);
 		}
+		*/
 
 		/*
 		League[] leagues = FootballAPI.getLeagues();
@@ -42,7 +48,7 @@ public class Main {
 		}
 
 		 */
-	    DatabaseService.disconnect();
+	    //DatabaseService.disconnect();
 
     }
 }

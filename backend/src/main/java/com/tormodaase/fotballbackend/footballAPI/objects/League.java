@@ -28,6 +28,16 @@ public class League implements ILeague {
         this.json = json;
     }
 
+    public League(JSONObject json, Country country, Season[] seasons) {
+        this.id = json.getInt("id");
+        this.name = json.getString("name");
+        this.type = json.getString("type");
+        this.logo = json.getString("logo");
+        this.country = country;
+        this.seasons = seasons;
+        this.json = json;
+    }
+
     @Override
     public int getID() {
         return id;

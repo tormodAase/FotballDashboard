@@ -5,3 +5,5 @@ SetEnvironmentVariables.java
 
 # class files not needed
 /backend/out
+/backend/.gradle
+/backend/build/
