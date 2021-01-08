@@ -25,7 +25,7 @@ let Table = (props) => {
             rows.push(<tr>{rowValues}</tr>);
         }
 
-        table = <table>{rows}</table>;
+        table = <table><tbody>{rows}</tbody></table>;
         
     }
 

@@ -1,5 +1,6 @@
 package main.java.com.tormodaase.fotballbackend.footballAPI.objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.interfaces.ITeam;
 import org.json.JSONObject;
@@ -16,6 +17,7 @@ public class Team implements ITeam {
 
     public Team(JSONObject json) throws JSONMismatchException {
         validateJSON(json);
+        System.out.println(json.toString());
         this.id         = json.getJSONObject("team").getInt("id");
         this.name       = json.getJSONObject("team").getString("name");
         this.country    = json.getJSONObject("team").getString("country");
@@ -62,11 +64,13 @@ public class Team implements ITeam {
     }
 
     @Override
+    @JsonIgnore
     public String getJSONAsString() {
         return json.toString();
     }
 
     @Override
+    @JsonIgnore
     public JSONObject getJSON() {
         return json;
     }

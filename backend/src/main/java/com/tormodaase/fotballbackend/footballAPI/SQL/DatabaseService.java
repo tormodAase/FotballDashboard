@@ -2,6 +2,8 @@ package main.java.com.tormodaase.fotballbackend.footballAPI.SQL;
 
 import main.java.com.tormodaase.fotballbackend.environment.exceptions.EnvironmentVariableException;
 import main.java.com.tormodaase.fotballbackend.footballAPI.objects.*;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.exceptions.JSONMismatchException;
+import main.java.com.tormodaase.fotballbackend.footballAPI.objects.min.LeagueMinimal;
 
 import java.sql.*;
 import java.util.prefs.Preferences;
@@ -25,6 +27,102 @@ public class DatabaseService {
 
     public static void disconnect() throws SQLException {
         connection.close();
+    }
+
+    public static Team[] selectAllTeams() {
+        String query = "SELECT *\n" +
+                "FROM TEAMS team\n" +
+                "LEFT JOIN VENUES venue ON team.venueId = venue.Id ";
+        Team[] teams = new Team[0];
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            teams = ResultSetConverter.getTeams(rs);
+
+        } catch(SQLException | JSONMismatchException e) {
+            e.printStackTrace();
+            System.out.println(query);
+        }
+
+        return teams;
+
+    }
+
+    public static LeagueMinimal[] selectAllLeaguesMin() {
+        String query = "SELECT *\n" +
+                "FROM LEAGUES l ";
+        LeagueMinimal[] leagues = new LeagueMinimal[0];
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            leagues = ResultSetConverter.getLeaguesMin(rs);
+        } catch(SQLException e) {
+            e.printStackTrace();
+            System.out.println(query);
+        }
+
+        return leagues;
+
+    }
+
+    public static League[] selectAllLeagues() {
+        String query = "SELECT *\n" +
+                "FROM LEAGUES l " +
+                "LEFT JOIN COUNTRIES c ON l.country = c.name ";
+        League[] leagues = new League[0];
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            leagues = ResultSetConverter.getLeagues(rs);
+
+        } catch(SQLException e) {
+            e.printStackTrace();
+            System.out.println(query);
+        }
+
+        return leagues;
+
+    }
+
+    public static Season[] selectSeasons(String filter) {
+        String query = "SELECT *\n" +
+                "FROM seasons " +
+                filter;
+
+        Season[] seasons = new Season[0];
+
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            seasons = ResultSetConverter.getSeasons(rs);
+
+        } catch(SQLException | JSONMismatchException e) {
+            e.printStackTrace();
+            System.out.println(query);
+        }
+
+        return seasons;
+    }
+
+    public static Country[] selectCountries(String filter) {
+        String query = "SELECT *\n" +
+                "FROM countries " +
+                filter;
+
+        Country[] countries = new Country[0];
+
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            countries = ResultSetConverter.getCountries(rs);
+
+        } catch(SQLException | JSONMismatchException e) {
+            e.printStackTrace();
+            System.out.println(query);
+        }
+
+        return countries;
+
     }
 
     public static void upsertItem(Object object) throws SQLException {

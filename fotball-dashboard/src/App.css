@@ -1,23 +1,43 @@
 .Container {
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;  
+    flex-wrap: wrap;
 }
 
 .ContainerHeader {
-    background-color: cyan;
+    background-color: rgb(198, 230, 197);
     border: 1px solid black;
     border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 8px;
+
 }
 
 .ContainerBody {
-    background-color: seashell;
+    background-color: rgb(240, 240, 240);
     border: 1px solid black;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    padding: 8px
 }
 
 .ErrorMessage {
     background-color:rgb(247, 183, 183);
     color:rgb(128, 0, 26);
     border-radius: 8px;
+}
+
+img {
+    width: 32px;
+}
+
+table {
+    text-align:left;
+}
+
+th {
+    padding-right: 16px
+}
+td {
+    padding-right: 16px;
 }
