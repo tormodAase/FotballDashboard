@@ -2,6 +2,7 @@ import Table from './TableComponent';
 import Container from './ContainerComponent';
 import Team from './TeamComponent';
 import react, {useState} from 'react';
+import TopBar from './TopBarComponent';
 
 function App() {
   let testArrayT = [[<p>Logo</p>, <p>Team</p>, <p>Country</p>]
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div className="App">
+      <TopBar />
       <Container title="Tabell"><Table array={teams}/></Container>
       <Container title="Tabell"><Table array={leagues}/></Container>
     </div>

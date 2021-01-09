@@ -1,7 +1,46 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Title {
+    color: white;
+    padding: 0px;
+    text-align: left;
+    font-size: 50px;
+    margin-block: 0px;
+    padding-top: 25px;
+    padding-left: 25px;
+    width: 0px
+}
+
+.SearchBar {
+    align-self: center;
+    text-align: center;
+    height: 50px;
+    width: 50%;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 30px 0px 25px 0px;
+}
+
+input {
+    border-radius: 50px;
+    outline: none;
+    height: 70%;
+    width: 50%;
+    color: rgb(143, 143, 143);
+    font-weight: bold;
+    text-indent: 12px;
+    font-size: 16px;
+    border: 1px solid gray;
+}
+
 .Container {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;  
     flex-wrap: wrap;
+
 }
 
 .ContainerHeader {
@@ -18,7 +57,18 @@
     border: 1px solid black;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    padding: 8px
+    padding: 8px;
+}
+
+.TopBar {
+    background-color: rgb(13, 185, 13);
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .ErrorMessage {
