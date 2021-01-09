@@ -35,7 +35,10 @@ function App() {
         }
         setTeams(newArray);
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {
+        console.log('error', error);
+        setTeams([[<div className="ErrorMessage">{error.toString()+"\n(Please contact Tormod for assistance)"}</div>]])
+      });
   }
 
   if (leagues.length < 2) {
@@ -53,7 +56,10 @@ function App() {
         }
         setLeagues(newArray);
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {
+        console.log('error', error);
+        setLeagues([[<div className="ErrorMessage">{error.toString()+"\n(Please contact Tormod for assistance)"}</div>]])
+      });
   }
 
   return (
